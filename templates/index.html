@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/styles.css') }}">
+</head>
+
+<body>
+  
+	<div class="container main"></div>
+	  	<div class="row">
+		  <div class="col">
+			<h1 class="header">Dog Breed Image Classifier</h1>
+			<form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">
+				<label for="uploaded-file" class="upload-frame">
+					Upload your photo here :)
+					<input type="file" id="uploaded-file" class="form-control" name="uploaded-file" style="display: none;" onchange="displayImage(event)">
+				</label>
+				<input type="hidden" name="image_path" id="image_path">
+				<div class="button-group">
+					<!-- <button class="upload-photo-btn" type="button" onclick="document.getElementById('file-input').click()">Upload Photo</button> -->
+					<button class="submit-btn" type="submit">Submit</button>
+				</div>
+			</form>
+			
+			<script>
+				function displayImage(event) {
+					var file = event.target.files[0];
+					var reader = new FileReader();
+		
+					reader.onload = function(e) {
+						var imageUrl = e.target.result;
+						var uploadFrame = document.querySelector('.upload-frame');
+						uploadFrame.style.backgroundImage = 'url(' + imageUrl + ')';
+						document.getElementById('image_path').value = imageUrl; // Set the value of the hidden input field
+					};
+		
+					reader.readAsDataURL(file);
+				}
+
+				function validateForm(event) {
+					var fileInput = document.getElementById('uploaded-file');
+					if (fileInput.files.length === 0) {
+						alert('Please upload a photo first');
+						event.preventDefault(); // Prevent the form from submitting
+					}
+				}
+
+				document.querySelector('form').addEventListener('submit', validateForm);
+			</script>
+
+		</div>
+	</div>
+	
+	
+
+	  <h2 class="breeds-heading">Example of Trained Dog Breeds</h2>
+	  <p>Limit the choice of breed to the list presented below for accurate results</p>
+	  <div class="container">
+		<div class="row breed-column "> 
+		  <div class="col-lg-8 col-md">
+			
+			  <ul>Akitas</ul>
+			  <ul>Australian Shepherds</ul>
+			   <ul>Basset Hounds</ul>
+				<ul>Beagles</ul>
+				<ul>Belgian Malinois</ul>
+				<ul>Bernese Mountain Dogs</ul>
+				<ul>Bichon Frises</ul>
+				<ul>Bloodhounds</ul>
+				<ul>Border Collies</ul>
+				<ul>Boston Terriers</ul>
+				<ul>Boxers</ul>
+				<ul>Brittanys</ul>
+			  
+			</div>
+			<div class="col-lg-8 col-md">
+				
+					<ul>Bulldogs</ul>
+					<ul>Cani Corsi</ul>
+					<ul>Cavalier King Charles Spaniels</ul>
+					<ul>Chesapeake Bay Retrievers</ul>
+					<ul>Chihuahuas</ul>
+					<ul>Cocker Spaniels</ul>
+					<ul>Collies</ul>
+					<ul>Dachshunds</ul>
+					<ul>Doberman Pinschers</ul>
+					<ul>English Springer Spaniels</ul>
+					<ul>French Bulldogs</ul>
+					<ul>German Shepherd Dogs</ul>
+					<ul>German Shorthaired Pointers</ul>
+				 
+				</div>
+		  <div class="col-lg-8 col-md">
+			
+			  <ul>Golden Retrievers</ul>
+			  <ul>Great Danes</ul>
+			  <ul>Havanese</ul>
+			  <ul>Labrador Retrievers</ul>
+			  <ul>Maltese</ul>
+			  <ul>Mastiffs</ul>
+			  <ul>Miniature American Shepherds</ul>
+			  <ul>Miniature Schnauzers</ul>
+			  <ul>Newfoundlands</ul>
+			  <ul>Pembroke Welsh Corgis</ul>
+			  <ul>Pomeranians</ul>
+			  <ul>Poodles</ul>
+			
+		  </div>
+		  <div class="col-lg-8 col-md">
+			
+			  <ul>Portuguese Water Dogs</ul>
+			  <ul>Pugs</ul>
+			  <ul>Rhodesian Ridgebacks</ul>
+			  <ul>Rottweilers</ul>
+			  <ul>Shetland Sheepdogs</ul>
+			  <ul>Shiba Inu</ul>
+			  <ul>Shih Tzu</ul>
+			  <ul>Siberian Huskies</ul>
+			  <ul>St. Bernards</ul>
+			  <ul>Vizslas</ul>
+			  <ul>Weimaraners</ul>
+			  <ul>West Highland White Terriers</ul>
+			  <ul>Yorkshire Terriers</ul>
+			
+		  </div>
+	  </div>
+	</div>
+			
+	</body>
+</html>	

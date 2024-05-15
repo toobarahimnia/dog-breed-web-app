@@ -1,0 +1,93 @@
+body {
+    background-color: #FAEBD7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    margin-bottom: 70px;
+    padding: 0;
+}
+
+h1.header {
+    text-align: center;
+    padding: 20px 0; /* adding padding to the top and bottom */
+}
+
+h2, h3, p, ul {
+    text-align: center;
+}
+
+.main {
+    width: 80%;
+    margin: 2% auto; /* Center the element and add margin on top and bottom */
+}
+
+
+
+.breed-column {
+    display: flex;
+    flex-wrap: wrap; /* Ensure items wrap to next line if not enough space */
+    justify-content: space-between; /* Distribute items evenly along the row */
+    width: calc(100% - 300px); /* Adjust width to fit all devices with space on both sides */
+    margin: 0 150px; /* Add margin to the left and right sides */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.breeds-heading {
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+
+/* Style for the upload frame */
+.upload-frame {
+    border: 2px dashed #ccc; /* Dashed border */
+    padding: 20px; /* Padding inside the frame */
+    text-align: center; /* Center align the content */
+    margin: 0 auto 20px auto; /* Center the frame horizontally and add margin below */
+    width: 300px; /* Set width of the frame */
+    height: 200px; /* Set height of the frame */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    position: relative; /* Position relative for absolute positioning inside */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+}
+
+/* Style for the message inside the upload frame */
+.upload-frame p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Font size */
+    color: #666; /* Text color */
+}
+
+/* Style for the uploaded image */
+.uploaded-image {
+    display: none; /* Initially hide the uploaded image */
+    position: absolute; /* Position absolute to overlap the message */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover; /* Cover the entire frame */
+}
+
+
+/* Style for the buttons */
+.submit-btn {
+    display: block; /* Make the button a block element */
+    margin: 0 auto; /* Center the button horizontally */
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* No border */
+    cursor: pointer; /* Cursor style on hover */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    margin-top: 20px; /* Add margin on top */
+}
+
+/* Hover effect for the buttons */
+.submit-btn:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
