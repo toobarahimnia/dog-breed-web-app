@@ -11,7 +11,7 @@ from waitress import serve
 # Define a flask app
 app = Flask(__name__)
 root = os.getcwd()
-filename = 'models/model.pkl'
+filename = 'model.pkl'
 learn = load_learner(os.path.join(root, filename))
 
 
