@@ -46,20 +46,5 @@ def single_image_predict(image):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8000, debug=True)
-    # serve(app, host="0.0.0.0", port=8000,debug=True)
+    app.run(host="0.0.0.0", port=8000)
 
-# for uploading the model to git need to install git LFS since it's a big file (steps in notion)
-'''
-https://github.com/shankarj67/Water-classifier-fastai/blob/master/app.py
-https://github.com/danielchang2002/DogBreedClassification/blob/main/app.py
-https://medium.com/@bijil.subhash/image-classifier-deployment-on-heroku-using-fastai-flask-and-node-js-70ad7057efc2
-https://github.com/ryanmark1867/fastai_deployment/blob/main/web_flask_deploy.py
-https://github.com/jakerieger/FlaskIntroduction/blob/master/app.py
-https://github.com/bigyankarki/experiments_by_bigyan/blob/master/templates/index.html
-https://forums.fast.ai/t/how-to-deploy-a-deep-learning-model-to-google-app-engine-using-flask-api-free-step-by-step-guide-for-beginners/74159
-
-
-postman: https://web.postman.co/workspace/My-Workspace~a6f8252d-9139-4f35-89c2-41d412515550/request/create?requestId=80ebe32d-b912-4e41-a62e-917783b5d3fd
-
-'''
